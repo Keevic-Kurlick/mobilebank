@@ -23,6 +23,6 @@ public class MobileBankApiTestV1 {
                 .body("[1].currency", equalTo("USD"))
                 .body("[2].balance", greaterThan(0))
                 .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
-                .body("every { it.balance >= 0}", is(true));
+                .body("every { it.balance >= 0}", is(false));
     }
 }
