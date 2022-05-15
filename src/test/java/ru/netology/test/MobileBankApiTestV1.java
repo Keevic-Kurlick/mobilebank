@@ -20,7 +20,7 @@ public class MobileBankApiTestV1 {
                 .header("Content-Type", "application/json; charset=UTF-8")
                 .contentType(ContentType.JSON)
                 .body("", hasSize(3))
-                .body("[1].currency", equalTo("EURO"))
+                .body("[1].currency", equalTo("USD"))
                 .body("[2].balance", greaterThan(0))
                 .body(matchesJsonSchemaInClasspath("accounts.schema.json"))
                 .body("every { it.balance >= 0}", is(true));
